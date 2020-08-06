@@ -4,14 +4,13 @@ import { movies } from "./movies";
 
 describe("statement", () => {
   it("should create the correct statement", () => {
-    const expected = 
-`Rental Record for laura
-  Die Hard  3.5
-  Matrix  2
-Amount owed is 5.5
-You earned 2 frequent renter points`
+    let expected = 'Rental Record for laura\n'
+    expected += '\tDie Hard\t3.5\n'
+    expected += '\tMatrix\t2\n'
+    expected += 'Amount owed is 5.5\n'
+    expected += 'You earned 2 frequent renter points\n'
 
     const result = statement(customer, movies);
-    expect(result.replace(/\s/g, '')).toEqual(expected.replace(/\s/g, ''));
+    expect(result).toEqual(expected);
   });
 });
